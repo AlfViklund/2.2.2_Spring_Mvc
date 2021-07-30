@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th= "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Series</th>
+        <th>Model</th>
+        <th>Color</th>
+    </tr>
+    <tr th:each="car, state : ${carList}" class="row" th:classspend="${state.odd} ? 'odd-row' : 'even-row'">
+        <td th:utext="${state.count}">Id</td>
+        <td th:utext="${car.getSeries()}">Series</td>
+        <td th:utext="${car.getModel()}">Model</td>
+        <td th:utext="${car.getColor()}">Color</td>
+    </tr>
+</table>
+</body>
+</html>
